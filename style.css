@@ -406,7 +406,7 @@ ul { list-style: none; }
 
 .kanji-desc p {
   font-size: 0.95rem;
-  color: var(--clr-text);
+  color: #6b5a4e;
   line-height: 1.9;
   margin-bottom: 16px;
 }
@@ -489,6 +489,13 @@ ul { list-style: none; }
   padding: 36px 28px;
   border: 1px solid var(--clr-border);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+/* 5枚目：中央寄せ・半幅 */
+.service-card--wide {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 12px);
+  margin: 0 auto;
 }
 .service-card:hover {
   transform: translateY(-5px);
