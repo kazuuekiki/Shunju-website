@@ -251,75 +251,32 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #1f1710 0%, #38241a 45%, #1f1710 100%);
+  background-image: url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
   z-index: 0;
+  animation: heroBgDrift 20s ease-in-out infinite alternate;
 }
 
-/* 光のオーブ共通 */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  will-change: transform, opacity;
-  pointer-events: none;
+/* ゆっくりと画像が動く */
+@keyframes heroBgDrift {
+  0%   { background-position: center top;    }
+  50%  { background-position: 55% 10%;       }
+  100% { background-position: 45% top;       }
 }
 
-/* 秋色オーブ — 左下から大きく弧を描く */
-.orb-1 {
-  width: 580px;
-  height: 580px;
-  background: rgba(220, 120, 30, 0.65);
-  bottom: -180px;
-  left: -160px;
-  animation: orbDrift1 10s ease-in-out infinite alternate;
-}
-
-/* 春色オーブ — 右上から左下へふわりと流れる */
-.orb-2 {
-  width: 480px;
-  height: 480px;
-  background: rgba(225, 138, 115, 0.58);
-  top: -130px;
-  right: -130px;
-  animation: orbDrift2 8s ease-in-out infinite alternate;
-}
-
-/* 中央オーブ — 呼吸するように拡縮しながら漂う */
-.orb-3 {
-  width: 320px;
-  height: 320px;
-  background: rgba(200, 100, 40, 0.40);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: orbDrift3 12s ease-in-out infinite alternate;
-}
-
-@keyframes orbDrift1 {
-  0%   { transform: translate(0px,    0px)   scale(1);    opacity: 0.8; }
-  40%  { transform: translate(120px, -90px)  scale(1.15); opacity: 1;   }
-  100% { transform: translate(60px,  -160px) scale(0.9);  opacity: 0.7; }
-}
-
-@keyframes orbDrift2 {
-  0%   { transform: translate(0px,   0px)   scale(1);    opacity: 0.75; }
-  50%  { transform: translate(-100px, 110px) scale(1.2);  opacity: 1;    }
-  100% { transform: translate(-150px, 60px)  scale(0.95); opacity: 0.8;  }
-}
-
-@keyframes orbDrift3 {
-  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.6; }
-  33%  { transform: translate(-38%, -62%) scale(1.4);  opacity: 0.9; }
-  66%  { transform: translate(-62%, -40%) scale(0.8);  opacity: 0.5; }
-  100% { transform: translate(-50%, -54%) scale(1.2);  opacity: 0.8; }
-}
-
-/* 和の小紋風 ドット */
-.hero-bg::after {
+/* 文字視認性を保つ暗いオーバーレイ */
+.hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1.2' fill='%23ffffff' fill-opacity='0.04'/%3E%3C/svg%3E");
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(28, 14, 6, 0.52) 0%,
+      rgba(22, 10, 4, 0.46) 50%,
+      rgba(28, 14, 6, 0.58) 100%
+    );
 }
 
 .hero-content {
@@ -346,14 +303,15 @@ ul { list-style: none; }
   color: #fff8f2;
   line-height: 1.55;
   margin-bottom: 24px;
-  text-shadow: 0 2px 24px rgba(212,130,46,0.25);
+  text-shadow: 0 2px 16px rgba(15, 6, 2, 0.6), 0 4px 32px rgba(15, 6, 2, 0.4);
 }
 
 .hero-desc {
   font-size: clamp(0.9rem, 2vw, 1.05rem);
-  color: rgba(255, 232, 210, 0.82);
+  color: rgba(255, 240, 225, 0.92);
   line-height: 1.95;
   margin-bottom: 44px;
+  text-shadow: 0 1px 8px rgba(20, 8, 2, 0.5);
 }
 
 .hero-scroll { display: none; }
