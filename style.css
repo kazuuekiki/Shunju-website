@@ -6,8 +6,8 @@
 :root {
   /* 春秋カラーパレット */
   --clr-primary:  #3c2f24;    /* 深茶   — 信頼・温もり */
-  --clr-autumn:   #b8712e;    /* 秋色   — 琥珀・落葉 */
-  --clr-spring:   #c8907a;    /* 春色   — 桜・温もり */
+  --clr-autumn:   #d4822e;    /* 秋色   — 琥珀・落葉 */
+  --clr-spring:   #d9927c;    /* 春色   — 桜・温もり */
   --clr-green:    #7a9e7e;    /* 若葉   — 清廉・成長 */
   --clr-accent:   var(--clr-autumn);
   --clr-accent2:  var(--clr-spring);
@@ -92,7 +92,7 @@ ul { list-style: none; }
 .btn-primary:hover {
   background: var(--clr-spring);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184, 113, 46, 0.28);
+  box-shadow: 0 8px 28px rgba(212, 130, 46, 0.42);
 }
 .btn-primary.full {
   width: 100%;
@@ -261,8 +261,9 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(ellipse at 15% 80%, rgba(184,113,46,0.28) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 20%, rgba(200,144,122,0.22) 0%, transparent 55%);
+    radial-gradient(ellipse at 15% 80%, rgba(212,130,46,0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 18%, rgba(217,146,124,0.38) 0%, transparent 52%),
+    radial-gradient(ellipse at 50% 50%, rgba(190,100,40,0.12) 0%, transparent 70%);
 }
 
 /* 和の小紋風 ドット */
@@ -294,14 +295,15 @@ ul { list-style: none; }
   font-family: var(--ff-heading);
   font-size: clamp(2.2rem, 5.5vw, 3.6rem);
   font-weight: 700;
-  color: var(--clr-white);
+  color: #fff8f2;
   line-height: 1.55;
   margin-bottom: 24px;
+  text-shadow: 0 2px 24px rgba(212,130,46,0.25);
 }
 
 .hero-desc {
   font-size: clamp(0.9rem, 2vw, 1.05rem);
-  color: rgba(255,255,255,0.72);
+  color: rgba(255, 232, 210, 0.82);
   line-height: 1.95;
   margin-bottom: 44px;
 }
@@ -330,11 +332,12 @@ ul { list-style: none; }
 
 /* 春・秋 漢字ブロック */
 .about-name-block {
-  background: var(--clr-bg);
+  background: linear-gradient(#f6f3ee, #f6f3ee) padding-box,
+              linear-gradient(135deg, var(--clr-autumn), var(--clr-spring)) border-box;
   border-radius: 16px;
   padding: 40px 32px;
   text-align: center;
-  border: 1px solid var(--clr-border);
+  border: 2px solid transparent;
 }
 
 .kanji-block {
@@ -441,7 +444,7 @@ ul { list-style: none; }
 }
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 28px rgba(212,130,46,0.18);
   border-color: var(--clr-autumn);
 }
 
@@ -467,8 +470,8 @@ ul { list-style: none; }
 }
 
 .service-note {
-  background: linear-gradient(135deg, rgba(184,113,46,0.07), rgba(200,144,122,0.07));
-  border: 1px solid rgba(184,113,46,0.18);
+  background: linear-gradient(135deg, rgba(212,130,46,0.13), rgba(217,146,124,0.13));
+  border: 1px solid rgba(212,130,46,0.32);
   border-radius: 12px;
   padding: 28px 36px;
   text-align: center;
