@@ -259,59 +259,59 @@ ul { list-style: none; }
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  will-change: transform;
+  filter: blur(60px);
+  will-change: transform, opacity;
   pointer-events: none;
 }
 
-/* 秋色オーブ — 左下からゆっくり上へ */
+/* 秋色オーブ — 左下から大きく弧を描く */
 .orb-1 {
-  width: 520px;
-  height: 520px;
-  background: rgba(212, 120, 36, 0.42);
-  bottom: -160px;
-  left: -140px;
-  animation: orbDrift1 16s ease-in-out infinite alternate;
+  width: 580px;
+  height: 580px;
+  background: rgba(220, 120, 30, 0.65);
+  bottom: -180px;
+  left: -160px;
+  animation: orbDrift1 10s ease-in-out infinite alternate;
 }
 
-/* 春色オーブ — 右上からふわりと揺れる */
+/* 春色オーブ — 右上から左下へふわりと流れる */
 .orb-2 {
-  width: 440px;
-  height: 440px;
-  background: rgba(220, 140, 120, 0.36);
-  top: -120px;
-  right: -120px;
-  animation: orbDrift2 13s ease-in-out infinite alternate;
+  width: 480px;
+  height: 480px;
+  background: rgba(225, 138, 115, 0.58);
+  top: -130px;
+  right: -130px;
+  animation: orbDrift2 8s ease-in-out infinite alternate;
 }
 
-/* 中央オーブ — ゆっくり拡縮・移動 */
+/* 中央オーブ — 呼吸するように拡縮しながら漂う */
 .orb-3 {
-  width: 280px;
-  height: 280px;
-  background: rgba(195, 105, 45, 0.22);
+  width: 320px;
+  height: 320px;
+  background: rgba(200, 100, 40, 0.40);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: orbDrift3 19s ease-in-out infinite alternate;
+  animation: orbDrift3 12s ease-in-out infinite alternate;
 }
 
 @keyframes orbDrift1 {
-  0%   { transform: translate(0px,  0px) scale(1);    }
-  40%  { transform: translate(60px, -50px) scale(1.1); }
-  100% { transform: translate(20px, -90px) scale(0.9); }
+  0%   { transform: translate(0px,    0px)   scale(1);    opacity: 0.8; }
+  40%  { transform: translate(120px, -90px)  scale(1.15); opacity: 1;   }
+  100% { transform: translate(60px,  -160px) scale(0.9);  opacity: 0.7; }
 }
 
 @keyframes orbDrift2 {
-  0%   { transform: translate(0px,  0px) scale(1);     }
-  50%  { transform: translate(-50px, 60px) scale(1.15); }
-  100% { transform: translate(-80px, 30px) scale(0.95); }
+  0%   { transform: translate(0px,   0px)   scale(1);    opacity: 0.75; }
+  50%  { transform: translate(-100px, 110px) scale(1.2);  opacity: 1;    }
+  100% { transform: translate(-150px, 60px)  scale(0.95); opacity: 0.8;  }
 }
 
 @keyframes orbDrift3 {
-  0%   { transform: translate(-50%, -50%) scale(1);    }
-  33%  { transform: translate(-42%, -58%) scale(1.25); }
-  66%  { transform: translate(-58%, -44%) scale(0.85); }
-  100% { transform: translate(-50%, -52%) scale(1.1);  }
+  0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.6; }
+  33%  { transform: translate(-38%, -62%) scale(1.4);  opacity: 0.9; }
+  66%  { transform: translate(-62%, -40%) scale(0.8);  opacity: 0.5; }
+  100% { transform: translate(-50%, -54%) scale(1.2);  opacity: 0.8; }
 }
 
 /* 和の小紋風 ドット */
